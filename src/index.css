@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0b0d;
+  --color-surface: #141416;
+  --color-muted: #8a8a8f;
+  --color-accent: #ffb44f;
+  --color-accent-dim: rgba(255, 180, 79, 0.1);
+  --color-accent-semi: rgba(255, 180, 79, 0.4);
+  
+  --font-display: "Outfit", "Syne", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto; /* Managed by Lenis */
+    background-color: #0b0b0d;
+    color: #f2f1ed;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b0b0d;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #141416;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 180, 79, 0.1);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffb44f;
+  }
+}
+
+/* Fluid typography clamps */
+.h-fluid-hero {
+  font-size: clamp(2.5rem, 8vw + 1rem, 7rem);
+  line-height: 0.95;
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.h-fluid-section {
+  font-size: clamp(2rem, 5vw + 1rem, 4.5rem);
+  line-height: 1;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.h-fluid-card {
+  font-size: clamp(1.25rem, 2vw + 0.5rem, 2rem);
+  line-height: 1.1;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Custom noise animation and overlay */
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  20% { transform:translate(-15%, 5%) }
+  30% { transform:translate(7%, -25%) }
+  40% { transform:translate(-5%, 25%) }
+  50% { transform:translate(-15%, 10%) }
+  60% { transform:translate(15%, 0%) }
+  70% { transform:translate(0%, 15%) }
+  80% { transform:translate(3%, 35%) }
+  90% { transform:translate(-10%, 10%) }
+}
+
+.grain-overlay {
+  animation: grain 8s steps(10) infinite;
+}
+
+/* Custom cursor transitions */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(20, 20, 22, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(20, 20, 22, 0.9);
+  border-color: rgba(255, 180, 79, 0.4) !important;
+  box-shadow: 
+    0 0 35px rgba(255, 180, 79, 0.12),
+    inset 0 0 15px rgba(255, 180, 79, 0.03) !important;
+  transform: translateY(-2px);
+}
+
+/* Glowing card effect for standard list cards */
+.glow-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glow-card:hover {
+  border-color: rgba(255, 180, 79, 0.4) !important;
+  box-shadow: 
+    0 0 35px rgba(255, 180, 79, 0.12),
+    inset 0 0 15px rgba(255, 180, 79, 0.03) !important;
+  background: rgba(20, 20, 22, 0.9) !important;
+  transform: translateY(-2px);
+}
+
+/* Primary Button Glow on Hover */
+.glow-btn {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.glow-btn:hover {
+  box-shadow: 0 0 30px rgba(255, 180, 79, 0.5) !important;
+  transform: translateY(-2px);
+}
+
+/* Secondary Button Glow on Hover */
+.glow-btn-secondary {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glow-btn-secondary:hover {
+  border-color: rgba(255, 180, 79, 0.45) !important;
+  background: rgba(255, 180, 79, 0.05) !important;
+  box-shadow: 0 0 25px rgba(255, 180, 79, 0.2) !important;
+  transform: translateY(-2px);
+  color: #ffb44f !important;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Scramble effect support */
+.scramble-char {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Infinite Marquee Loop animations */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 32s linear infinite;
+}

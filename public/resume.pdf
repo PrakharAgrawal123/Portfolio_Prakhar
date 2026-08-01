@@ -1,0 +1,62 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 200 >>
+stream
+BT
+/F1 24 Tf
+70 700 Td
+(PRAKHAR AGRAWAL) Tj
+/F1 14 Tf
+0 -30 Td
+(Data Scientist & AI/ML Engineer) Tj
+0 -25 Td
+(Email: agrawalprakhar931@gmail.com | Phone: +91 6390142114) Tj
+0 -20 Td
+(Portfolio: https://prakharagrawal.dev) Tj
+0 -40 Td
+(EDUCATION) Tj
+/F1 12 Tf
+0 -20 Td
+(United University - BCA (2024-2027) - CGPA: 9.5/10) Tj
+/F1 14 Tf
+0 -40 Td
+(SKILLS) Tj
+/F1 12 Tf
+0 -20 Td
+(Python, SQL, R3F, React, Machine Learning, Power BI, NLP, Scikit-Learn) Tj
+/F1 14 Tf
+0 -40 Td
+(EXPERIENCE) Tj
+/F1 12 Tf
+0 -20 Td
+(IBM SkillsBuild - AI Automation Intern (2026)) Tj
+0 -15 Td
+(CodeCite - Web Development Intern (2026)) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000222 00000 n 
+0000000299 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+550
+%%EOF
