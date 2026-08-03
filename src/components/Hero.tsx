@@ -1,11 +1,83 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 import { usePortfolioStore } from '../store/usePortfolioStore';
 import { TextScramble } from './TextScramble';
-import { ArrowDown, Mail, Briefcase } from 'lucide-react';
+import { ArrowDown, Mail, Briefcase, Linkedin, Github } from 'lucide-react';
 import { Magnetic } from './Magnetic';
 import { HeroScene } from './HeroScene';
+
+interface FloatingPillProps {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+  activeColor: string;
+  textColor?: string;
+  setCursor: (type: any) => void;
+}
+
+const FloatingSocialPill: React.FC<FloatingPillProps> = ({ 
+  href, 
+  icon, 
+  label, 
+  activeColor, 
+  textColor = '#f2f1ed', 
+  setCursor 
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={() => {
+        setIsHovered(true);
+        setCursor('hover');
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setCursor('default');
+      }}
+      animate={{ width: isHovered ? 190 : 48 }}
+      transition={{ type: 'spring', stiffness: 220, damping: 20 }}
+      className="h-12 flex items-center rounded-full bg-[#141416]/95 backdrop-blur-md border overflow-hidden cursor-pointer relative"
+      style={{
+        borderColor: isHovered ? activeColor : `${activeColor}60`,
+        boxShadow: isHovered 
+          ? `0 0 20px ${activeColor}40, inset 0 0 10px ${activeColor}20` 
+          : `0 0 10px ${activeColor}15`,
+      }}
+    >
+      {/* Inner solid icon circle: centered when collapsed (right-2 makes it perfectly centered inside 48px width) */}
+      <div 
+        className="h-8 w-8 rounded-full flex items-center justify-center absolute right-2 transition-all duration-300 z-10"
+        style={{ 
+          backgroundColor: activeColor,
+          color: textColor,
+          transform: isHovered ? 'scale(1.08) rotate(5deg)' : 'scale(1)'
+        }}
+      >
+        {icon}
+      </div>
+      
+      {/* Sliding text revealed on hover */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.span
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -10 }}
+            transition={{ duration: 0.2, delay: 0.05 }}
+            className="font-display text-xs font-black uppercase tracking-wider text-[#f2f1ed] pl-6 pr-14 whitespace-nowrap"
+          >
+            {label}
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </motion.a>
+  );
+};
 
 export const Hero: React.FC = () => {
   const { setCursor, activeSection } = usePortfolioStore();
@@ -123,6 +195,26 @@ export const Hero: React.FC = () => {
             </Magnetic>
           </motion.div>
         </div>
+      </div>
+
+      {/* Floating social sidebar - desktop only */}
+      <div className="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 z-20 hidden lg:flex flex-col gap-4">
+        <FloatingSocialPill
+          href={portfolioData.personal.socials.linkedin}
+          icon={<Linkedin size={15} className="stroke-[2.5]" />}
+          label="LinkedIn Profile"
+          activeColor="#0a66c2"
+          textColor="#ffffff"
+          setCursor={setCursor}
+        />
+        <FloatingSocialPill
+          href={portfolioData.personal.socials.github}
+          icon={<Github size={15} className="stroke-[2.5]" />}
+          label="GitHub Profile"
+          activeColor="#ffb44f"
+          textColor="#0b0b0d"
+          setCursor={setCursor}
+        />
       </div>
 
       {/* Looping Scroll Indicator */}

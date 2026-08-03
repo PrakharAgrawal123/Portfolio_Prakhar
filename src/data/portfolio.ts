@@ -14,6 +14,7 @@ export interface Project {
   role: string;
   process: string;
   outcomes: string;
+  stats: { value: string; label: string }[];
 }
 
 export interface Experience {
@@ -124,6 +125,11 @@ export const portfolioData = {
       github: "https://github.com/PrakharAgrawal123",
       live: "https://github.com/PrakharAgrawal123/LegalLingo",
       image: "/projects/legallingo.png",
+      stats: [
+        { value: "95%+", label: "OCR Accuracy" },
+        { value: "< 5s", label: "Simplification" },
+        { value: "Gemini", label: "LLM Pipeline" }
+      ],
       problem: "Legal contracts are intentionally dense and full of archaic terminology, making them inaccessible to average citizens and small business owners who cannot afford expensive hourly legal consultations.",
       role: "Lead AI Developer, designing both the document ingestion pipeline (OCR) and the prompting strategy for the LLM translation layers.",
       process: "Built a Python-Flask backend that extracts text from PDFs via OCR. Passed structured chunks to Google's Gemini Pro API using carefully crafted system instructions. Implemented a responsive React client featuring side-by-side translation panels and interactive legal clause highlight cards.",
@@ -147,6 +153,11 @@ export const portfolioData = {
       github: "https://github.com/PrakharAgrawal123",
       live: "https://github.com/PrakharAgrawal123/ViralScore",
       image: "/projects/viralscore.png",
+      stats: [
+        { value: "88%", label: "Post Accuracy" },
+        { value: "10k+", label: "Dataset Posts" },
+        { value: "Forest", label: "ML Regressor" }
+      ],
       problem: "Professionals and creators post content on LinkedIn without any objective feedback loop, resulting in low initial traction due to poor formatting, low readability, or suboptimal hook sentences.",
       role: "Data Scientist & ML Engineer, responsible for scraping, feature engineering, training the prediction model, and implementing the text analysis scoring metrics.",
       process: "Engineered features from text inputs including sentence lengths, readability indices (Flesch-Kincaid), emoji densities, and positive/negative sentiment scores. Trained a Random Forest Regressor on simulated post engagement data. Designed a Flask API to serve predictions dynamically.",
@@ -171,6 +182,11 @@ export const portfolioData = {
       github: "https://github.com/PrakharAgrawal123",
       live: "https://github.com/PrakharAgrawal123/AI-Multi-Disease-Prediction",
       image: "/projects/healthcare-ai.png",
+      stats: [
+        { value: "94%+", label: "SVC Accuracy" },
+        { value: "3", label: "Disease Pipes" },
+        { value: "Streamlit", label: "Deployment" }
+      ],
       problem: "Early detection of chronic ailments (like diabetes, heart disease, and kidney malfunction) is restricted due to limited availability of medical checkups in remote sectors and slow diagnostic workflows.",
       role: "ML Developer, conducting exploratory data analysis, dataset preprocessing, model evaluation, and final model encapsulation via Streamlit.",
       process: "Preprocessed multiple medical datasets using scaling and feature selection. Evaluated Support Vector Classifier, Logistic Regression, and XGBoost models. Saved the optimal parameters using joblib and integrated them into a unified Streamlit interface.",
@@ -194,6 +210,11 @@ export const portfolioData = {
       github: "https://github.com/PrakharAgrawal123",
       live: "https://github.com/PrakharAgrawal123/Smart-Expense-Tracker",
       image: "/projects/expense-tracker.png",
+      stats: [
+        { value: "Chart.js", label: "Data Graphics" },
+        { value: "Firestore", label: "Realtime Sync" },
+        { value: "Firebase", label: "Authentication" }
+      ],
       problem: "People struggle to stick to financial budgets because of manual record keeping, lack of visualization on spending distributions, and lack of warnings when category budgets are breached.",
       role: "Frontend & Integration Developer, implementing database state tracking, user authentication, and data visualizations.",
       process: "Integrated Firebase Firestore for dynamic real-time expense synchronization. Configured Chart.js datasets to compute and render breakdown graphs of expenditures by category. Developed responsive modals for transactional logging.",
@@ -217,6 +238,11 @@ export const portfolioData = {
       github: "https://github.com/PrakharAgrawal123",
       live: "https://github.com/PrakharAgrawal123/Customer-Churn-Prediction",
       image: "/projects/churn-prediction.png",
+      stats: [
+        { value: "0.86", label: "AUC-ROC Score" },
+        { value: "SMOTE", label: "Data Balance" },
+        { value: "15%", label: "Churn Drop" }
+      ],
       problem: "Telecom and SaaS firms lose a high percentage of revenues to annual customer attrition, yet retention teams fail to intervene early due to a lack of individual customer churn risk indicators.",
       role: "Data Analyst, executing detailed statistical analysis, feature importance mapping, and predictive classification model tuning.",
       process: "Cleaned and prepared customer churn datasets, addressing imbalance using SMOTE. Evaluated random forest and gradient boosting models using AUC-ROC metrics. Designed feature importance charts to highlight major attrition factors.",
