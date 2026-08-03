@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 import { usePortfolioStore } from '../store/usePortfolioStore';
 import { Award, Code2, Globe, Sparkles } from 'lucide-react';
+import { InteractiveHeading } from './InteractiveHeading';
 
 export const Achievements: React.FC = () => {
   const { setCursor } = usePortfolioStore();
@@ -28,9 +29,7 @@ export const Achievements: React.FC = () => {
           <span className="font-display text-xs font-black uppercase tracking-[0.2em] text-[#ffb44f]">
             07 / RECOGNITION
           </span>
-          <h2 className="h-fluid-section text-[#f2f1ed] mt-4">
-            Hackathons, awards, and contributions.
-          </h2>
+          <InteractiveHeading text="Hackathons, awards, and contributions." />
         </div>
 
         {/* Asymmetrical Grid of cards */}
@@ -59,7 +58,7 @@ export const Achievements: React.FC = () => {
                     <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/5">
                       {getIcon(ach.type)}
                     </span>
-                    <span className="font-display text-[10px] font-black uppercase tracking-widest text-[#8a8a8f]">
+                    <span className="font-display text-xs font-bold uppercase tracking-widest text-[#8a8a8f]">
                       {ach.date}
                     </span>
                   </div>
@@ -69,15 +68,15 @@ export const Achievements: React.FC = () => {
                   }`}>
                     {ach.title}
                   </h3>
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#ffb44f] mt-1 block">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#ffb44f] mt-1 block">
                     {ach.organization}
                   </span>
-                  <p className="mt-4 font-body text-xs leading-relaxed text-[#8a8a8f]">
+                  <p className="mt-4 font-body text-sm leading-relaxed text-[#8a8a8f]">
                     {ach.description}
                   </p>
                 </div>
 
-                <div className="mt-6 border-t border-white/5 pt-4 text-[10px] font-semibold uppercase tracking-widest text-[#ffb44f]">
+                <div className="mt-6 border-t border-white/5 pt-4 text-xs font-bold uppercase tracking-widest text-[#ffb44f]">
                   {ach.type} Achievement {ach.icon}
                 </div>
               </motion.div>

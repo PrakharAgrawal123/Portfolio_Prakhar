@@ -4,6 +4,7 @@ import { portfolioData } from '../data/portfolio';
 import { usePortfolioStore } from '../store/usePortfolioStore';
 import { Quote, Star, ChevronLeft, ChevronRight, Linkedin } from 'lucide-react';
 import { Magnetic } from './Magnetic';
+import { InteractiveHeading } from './InteractiveHeading';
 
 export const Testimonials: React.FC = () => {
   const { setCursor } = usePortfolioStore();
@@ -30,9 +31,7 @@ export const Testimonials: React.FC = () => {
               <span className="font-display text-xs font-black uppercase tracking-[0.2em] text-[#ffb44f]">
                 08 / ENDORSEMENTS
               </span>
-              <h2 className="h-fluid-section text-[#f2f1ed] mt-4 font-black">
-                What mentors & teammates say.
-              </h2>
+              <InteractiveHeading text="What mentors & teammates say." />
               <p className="mt-6 text-sm text-[#8a8a8f] leading-relaxed max-w-sm">
                 Feedback from technical guides, hackathon partners, and academic supervisors who have collaborated directly with me.
               </p>
@@ -120,7 +119,7 @@ export const Testimonials: React.FC = () => {
                           <h4 className="font-display text-sm font-bold text-[#f2f1ed]">
                             {test.name}
                           </h4>
-                          <p className="text-[10px] text-[#8a8a8f] uppercase tracking-wider mt-0.5">
+                          <p className="text-xs text-[#8a8a8f] uppercase tracking-wider mt-0.5">
                             {test.designation} at <span className="text-[#ffb44f]">{test.company}</span>
                           </p>
                         </div>

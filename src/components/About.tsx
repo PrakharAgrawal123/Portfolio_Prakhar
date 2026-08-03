@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 import { Clock, Code, ShieldCheck } from 'lucide-react';
 import { AureliaWatch } from './AureliaWatch';
+import { InteractiveHeading } from './InteractiveHeading';
 
 // Count-up helper component for stats card
 const Counter: React.FC<{ value: number; label: string; suffix?: string }> = ({ value, label, suffix = '' }) => {
@@ -43,7 +44,7 @@ const Counter: React.FC<{ value: number; label: string; suffix?: string }> = ({ 
         {count}
         {suffix}
       </span>
-      <span className="font-body text-xs font-semibold uppercase tracking-wider text-[#8a8a8f] mt-1">
+      <span className="font-body text-sm font-bold uppercase tracking-wider text-[#8a8a8f] mt-1">
         {label}
       </span>
     </div>
@@ -216,7 +217,7 @@ const InteractiveVectorCanvas: React.FC<{ isInView: boolean }> = ({ isInView }) 
         <h4 className="font-display text-lg font-bold text-[#f2f1ed] mt-1">
           AI/ML Space Representation
         </h4>
-        <p className="text-xs text-[#8a8a8f] mt-1">Hover cursor over the lattice to distort grid vectors.</p>
+        <p className="text-sm text-[#8a8a8f] mt-1">Hover cursor over the lattice to distort grid vectors.</p>
       </div>
     </div>
   );
@@ -236,9 +237,7 @@ export const About: React.FC = () => {
           <span className="font-display text-xs font-black uppercase tracking-[0.2em] text-[#ffb44f]">
             01 / IDENTITY
           </span>
-          <h2 className="h-fluid-section text-[#f2f1ed] mt-4">
-            Engineering data to decode insights.
-          </h2>
+          <InteractiveHeading text="Engineering data to decode insights." />
         </div>
 
         {/* Bento Grid */}
@@ -254,7 +253,7 @@ export const About: React.FC = () => {
                 {portfolioData.about.bio}
               </p>
             </div>
-            <div className="mt-8 border-t border-white/5 pt-6 flex flex-wrap gap-4 text-xs text-[#8a8a8f]">
+            <div className="mt-8 border-t border-white/5 pt-6 flex flex-wrap gap-4 text-sm text-[#8a8a8f]">
               <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-[#ffb44f]" /> United University Scholar</span>
               <span className="flex items-center gap-1.5"><Code size={14} className="text-[#ffb44f]" /> Full Stack Integration capability</span>
             </div>
@@ -277,7 +276,7 @@ export const About: React.FC = () => {
               <AureliaWatch isInView={isWatchInView} />
             </div>
             <div className="text-center z-10">
-              <p className="text-[9px] text-[#8a8a8f] uppercase tracking-widest">
+              <p className="text-xs text-[#8a8a8f] uppercase tracking-widest">
                 Prayagraj, Uttar Pradesh, India
               </p>
             </div>
@@ -307,10 +306,10 @@ export const About: React.FC = () => {
               </p>
             </div>
             <div className="mt-6 border-t border-white/5 pt-4">
-              <span className="font-display text-[10px] font-black uppercase tracking-wider text-[#8a8a8f] block">
+              <span className="font-display text-xs font-black uppercase tracking-wider text-[#8a8a8f] block">
                 PERSONALITY BIT
               </span>
-              <p className="text-xs text-[#8a8a8f] mt-1">{portfolioData.personal.funFact}</p>
+              <p className="text-sm text-[#8a8a8f] mt-1">{portfolioData.personal.funFact}</p>
             </div>
           </div>
 

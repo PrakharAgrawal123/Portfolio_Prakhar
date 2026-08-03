@@ -76,7 +76,7 @@ export const Navbar: React.FC = () => {
                   onClick={() => handleNavClick(item.id)}
                   onMouseEnter={() => setCursor('hover')}
                   onMouseLeave={() => setCursor('default')}
-                  className={`font-body text-xs font-semibold uppercase tracking-widest transition-all duration-300 relative py-1 ${
+                  className={`font-body text-sm font-bold uppercase tracking-widest transition-all duration-300 relative py-1 ${
                     isActive ? 'text-[#ffb44f]' : 'text-[#8a8a8f] hover:text-[#f2f1ed]'
                   }`}
                 >
@@ -96,7 +96,7 @@ export const Navbar: React.FC = () => {
                 onClick={() => setCommandPaletteOpen(true)}
                 onMouseEnter={() => setCursor('hover')}
                 onMouseLeave={() => setCursor('default')}
-                className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-[#f2f1ed] hover:bg-[#ffb44f] hover:text-[#0b0b0d] hover:border-[#ffb44f] transition-all duration-300 shadow-inner glow-btn"
+                className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold uppercase tracking-widest text-[#f2f1ed] hover:bg-[#ffb44f] hover:text-[#0b0b0d] hover:border-[#ffb44f] transition-all duration-300 shadow-inner glow-btn"
               >
                 <Terminal size={14} />
                 <span className="hidden sm:inline">Cmd+K</span>

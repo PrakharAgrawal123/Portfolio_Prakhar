@@ -6,6 +6,7 @@ import { portfolioData } from '../data/portfolio';
 import type { Experience as ExpType } from '../data/portfolio';
 import { usePortfolioStore } from '../store/usePortfolioStore';
 import { Calendar, ChevronDown, ChevronUp, CheckCircle } from 'lucide-react';
+import { InteractiveHeading } from './InteractiveHeading';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,9 +52,7 @@ export const Experience: React.FC = () => {
           <span className="font-display text-xs font-black uppercase tracking-[0.2em] text-[#ffb44f]">
             04 / CAREER PATH
           </span>
-          <h2 className="h-fluid-section text-[#f2f1ed] mt-4">
-            Translating theories into internships.
-          </h2>
+          <InteractiveHeading text="Translating theories into internships." />
         </div>
 
         {/* Timeline container */}
@@ -79,10 +78,10 @@ export const Experience: React.FC = () => {
                 <div key={exp.id} className="relative group">
                   {/* Left Date Panel (Desktop only) */}
                   <div className="absolute left-[-220px] top-2 hidden w-40 text-right md:block">
-                    <span className="font-display text-xs font-black uppercase tracking-widest text-[#ffb44f]">
+                    <span className="font-display text-sm font-bold uppercase tracking-widest text-[#ffb44f]">
                       {exp.duration}
                     </span>
-                    <p className="text-[10px] text-[#8a8a8f] mt-1 uppercase tracking-widest">
+                    <p className="text-xs text-[#8a8a8f] mt-1 uppercase tracking-widest">
                       {exp.employmentType}
                     </p>
                   </div>
@@ -113,7 +112,7 @@ export const Experience: React.FC = () => {
                           <span>{exp.duration}</span>
                         </div>
 
-                        <span className="text-[10px] font-black uppercase tracking-wider text-[#ffb44f]">
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#ffb44f]">
                           {exp.company}
                         </span>
                         <h3 className="font-display text-xl font-bold mt-1 text-[#f2f1ed]">
@@ -149,12 +148,12 @@ export const Experience: React.FC = () => {
 
                           {/* Bullet points */}
                           <div className="mt-6">
-                            <span className="font-display text-[10px] font-black uppercase tracking-widest text-[#f2f1ed]/50">
+                            <span className="font-display text-xs font-bold uppercase tracking-widest text-[#f2f1ed]/50">
                               Core Highlights
                             </span>
                             <ul className="mt-3 flex flex-col gap-3">
                               {exp.highlights.map((highlight, idx) => (
-                                <li key={idx} className="flex items-start gap-3 text-xs leading-relaxed text-[#8a8a8f]">
+                                <li key={idx} className="flex items-start gap-3 text-sm leading-relaxed text-[#8a8a8f]">
                                   <CheckCircle size={14} className="text-[#ffb44f] mt-0.5 shrink-0" />
                                   <span>{highlight}</span>
                                 </li>
@@ -164,14 +163,14 @@ export const Experience: React.FC = () => {
 
                           {/* Technologies tags */}
                           <div className="mt-6">
-                            <span className="font-display text-[10px] font-black uppercase tracking-widest text-[#f2f1ed]/50">
+                            <span className="font-display text-xs font-bold uppercase tracking-widest text-[#f2f1ed]/50">
                               Technologies Leveraged
                             </span>
                             <div className="flex flex-wrap gap-2 mt-3">
                               {exp.technologies.map((tech) => (
                                 <span
                                   key={tech}
-                                  className="rounded-full bg-white/5 px-2.5 py-1 text-[10px] font-bold text-[#f2f1ed] border border-white/5"
+                                  className="rounded-full bg-white/5 px-2.5 py-1 text-xs font-bold text-[#f2f1ed] border border-white/5"
                                 >
                                   {tech}
                                 </span>

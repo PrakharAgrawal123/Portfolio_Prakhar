@@ -37,13 +37,13 @@ export const Footer: React.FC = () => {
           
           {/* Left Column: Location & Live Time */}
           <div className="flex flex-col gap-2">
-            <span className="font-body text-xs font-semibold uppercase tracking-widest text-[#f2f1ed]">
+            <span className="font-body text-sm font-bold uppercase tracking-widest text-[#f2f1ed]">
               LOCAL TIME (IST)
             </span>
             <span className="font-display text-lg font-medium text-[#ffb44f]">
               {localTime || 'Calculating...'}
             </span>
-            <span className="text-xs">{portfolioData.personal.location}</span>
+            <span className="text-sm">{portfolioData.personal.location}</span>
           </div>
 
           {/* Middle Column: Socials with Magnetic pull */}
@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
 
           {/* Right Column: Scroll to Top */}
           <div className="flex justify-between md:justify-end items-center gap-4">
-            <span className="text-xs">
+            <span className="text-sm">
               © {new Date().getFullYear()} Prakhar Agrawal. All rights reserved.
             </span>
             <Magnetic range={30}>

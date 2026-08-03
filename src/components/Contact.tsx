@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 import { usePortfolioStore } from '../store/usePortfolioStore';
 import { Magnetic } from './Magnetic';
 import { Mail, Download, Check, ClipboardCopy, Phone, MapPin } from 'lucide-react';
+import { InteractiveHeading } from './InteractiveHeading';
 import confetti from 'canvas-confetti';
 
 export const Contact: React.FC = () => {
@@ -27,7 +27,7 @@ export const Contact: React.FC = () => {
     }, 2500);
   };
 
-  const titleLetters = "LET'S WORK TOGETHER".split('');
+
 
   return (
     <section
@@ -47,30 +47,14 @@ export const Contact: React.FC = () => {
             </span>
 
             {/* Kinetic springy text header */}
-            <h2 className="h-fluid-section flex flex-wrap text-left text-[#f2f1ed] mt-4 font-black">
-              {titleLetters.map((char, index) => (
-                <motion.span
-                  key={index}
-                  whileHover={{
-                    scale: 1.15,
-                    color: '#ffb44f',
-                    y: -5,
-                  }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 10 }}
-                  className="inline-block origin-center cursor-default select-none"
-                  style={{ whiteSpace: char === ' ' ? 'pre' : 'normal' }}
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </h2>
+            <InteractiveHeading text="LET'S WORK TOGETHER" />
 
             <p className="mt-8 max-w-md font-body text-base leading-relaxed text-[#8a8a8f]">
               I am currently looking for full-time opportunities and internships where I can apply machine learning pipelines, visualization layouts, and analytical model building.
             </p>
 
             {/* Direct Details Grid */}
-            <div className="mt-12 flex flex-col gap-6 text-xs text-[#8a8a8f]">
+            <div className="mt-12 flex flex-col gap-6 text-sm text-[#8a8a8f]">
               <div className="flex items-center gap-3">
                 <MapPin size={16} className="text-[#ffb44f]" />
                 <span>{portfolioData.personal.location}</span>
@@ -121,13 +105,13 @@ export const Contact: React.FC = () => {
           {/* Right Columns: Fast Message Card info */}
           <div className="lg:col-span-2 flex flex-col justify-center">
             <div className="glass-panel glass-panel-hover rounded-2xl p-8">
-              <span className="font-display text-[10px] font-black uppercase tracking-widest text-[#ffb44f] block">
+              <span className="font-display text-xs font-bold uppercase tracking-widest text-[#ffb44f] block">
                 DIRECT CHANNEL
               </span>
               <h3 className="font-display text-xl font-bold text-[#f2f1ed] mt-2">
                 Let's start a conversation
               </h3>
-              <p className="mt-4 font-body text-xs leading-relaxed text-[#8a8a8f]">
+              <p className="mt-4 font-body text-sm leading-relaxed text-[#8a8a8f]">
                 Need assistance with statistical insights, predictive modelling configurations, or data analytics reporting dashboards? I am available to answer calls, reply to emails, and chat on LinkedIn.
               </p>
               
@@ -136,7 +120,7 @@ export const Contact: React.FC = () => {
                   href={`mailto:${portfolioData.personal.email}`}
                   onMouseEnter={() => setCursor('hover')}
                   onMouseLeave={() => setCursor('default')}
-                  className="flex items-center justify-between text-xs text-[#f2f1ed] hover:text-[#ffb44f] transition-colors"
+                  className="flex items-center justify-between text-sm text-[#f2f1ed] hover:text-[#ffb44f] transition-colors"
                 >
                   <span>Send direct mail</span>
                   <Mail size={14} />

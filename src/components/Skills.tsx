@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 import { usePortfolioStore } from '../store/usePortfolioStore';
 import { Cpu, Database, Layout, Eye, Wrench, GraduationCap, ChevronRight, Terminal } from 'lucide-react';
+import { InteractiveHeading } from './InteractiveHeading';
 
 type SkillCategories = 'languages' | 'dataScience' | 'visualization' | 'database' | 'web' | 'tools' | 'currentlyLearning';
 
@@ -123,9 +124,7 @@ export const Skills: React.FC = () => {
           <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-[#ffb44f]">
             02 / CORE ENGINE
           </span>
-          <h2 className="h-fluid-section text-[#f2f1ed] mt-4 font-black">
-            Technical Toolkit
-          </h2>
+          <InteractiveHeading text="Technical Toolkit" />
           <div className="h-[1px] w-20 bg-[#ffb44f] mt-6" />
         </div>
 
@@ -177,7 +176,7 @@ export const Skills: React.FC = () => {
                 <circle cx="50" cy="50" r="4" fill="#0b0b0d" stroke="#ffb44f" strokeWidth="2" />
               </svg>
 
-              <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between border-t border-white/5 pt-4 text-[9px] font-black uppercase tracking-widest text-[#8a8a8f]">
+              <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between border-t border-white/5 pt-4 text-xs font-bold uppercase tracking-widest text-[#8a8a8f]">
                 <span>Status: Optimal</span>
                 <span className="text-[#ffb44f] animate-pulse">Scanning Grid...</span>
               </div>
@@ -214,7 +213,7 @@ export const Skills: React.FC = () => {
                         }`}>
                           {cat.label}
                         </h4>
-                        <p className="text-[10px] text-[#8a8a8f] mt-0.5 line-clamp-1">
+                        <p className="text-xs text-[#8a8a8f] mt-0.5 line-clamp-1">
                           {cat.desc}
                         </p>
                       </div>
@@ -255,7 +254,7 @@ export const Skills: React.FC = () => {
                       {/* Header details */}
                       <div className="flex items-start justify-between relative z-10">
                         <div>
-                          <span className="text-[9px] font-black uppercase tracking-widest text-[#8a8a8f]">
+                          <span className="text-xs font-bold uppercase tracking-widest text-[#8a8a8f]">
                             {details.exp}
                           </span>
                           <h3 className="font-display text-xl font-bold mt-1 text-[#f2f1ed]">
@@ -264,7 +263,7 @@ export const Skills: React.FC = () => {
                         </div>
 
                         {/* Custom Proficiency Badge */}
-                        <span className={`rounded-full px-2.5 py-0.5 text-[9px] font-black uppercase tracking-widest border transition-colors ${
+                        <span className={`rounded-full px-2.5 py-0.5 text-xs font-bold uppercase tracking-widest border transition-colors ${
                           details.label === 'Expert' 
                             ? 'bg-[#ffb44f]/10 text-[#ffb44f] border-[#ffb44f]/20 shadow-[0_0_10px_rgba(255,180,79,0.05)]'
                             : details.label === 'Advanced'
@@ -277,7 +276,7 @@ export const Skills: React.FC = () => {
 
                       {/* Dynamic Skill Level Progress Bar */}
                       <div className="mt-8 relative z-10 flex flex-col gap-2">
-                        <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-[#8a8a8f]">
+                        <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-[#8a8a8f]">
                           <span>Strength</span>
                           <span className="text-[#ffb44f]">{details.level * 20}%</span>
                         </div>

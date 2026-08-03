@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { portfolioData } from '../data/portfolio';
 import { usePortfolioStore } from '../store/usePortfolioStore';
 import { ArrowRight, Award, Info, Github } from 'lucide-react';
+import { InteractiveHeading } from './InteractiveHeading';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -127,7 +128,7 @@ export const ProjectStack: React.FC = () => {
             <span className="font-display text-xs font-black uppercase tracking-[0.2em] text-[#ffb44f]">
               03 / CREATIONS
             </span>
-            <h2 className="h-fluid-section text-[#f2f1ed] mt-4 font-black">Selected Work</h2>
+            <InteractiveHeading text="Selected Work" />
             <p className="text-sm text-[#8a8a8f] mt-4">
               Click on a card to test the live deployment, or choose Info/Code below.
             </p>
@@ -172,13 +173,13 @@ export const ProjectStack: React.FC = () => {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffb44f] opacity-25"></span>
                       <div className="h-8 w-8 rounded-full border-2 border-white/5 border-t-[#ffb44f] animate-spin" />
                     </div>
-                    <span className="text-[9px] font-black uppercase tracking-widest text-[#ffb44f]">Launch Live App</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#ffb44f]">Launch Live App</span>
                   </div>
                 </div>
 
                 <div className="mt-6">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#ffb44f]">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#ffb44f]">
                       {project.category}
                     </span>
                   </div>
@@ -193,7 +194,7 @@ export const ProjectStack: React.FC = () => {
                   <div className="border-t border-white/5 pt-4 flex items-center justify-between mt-6">
                     <div className="flex flex-wrap gap-1.5">
                       {project.techStack.slice(0, 3).map((tech) => (
-                        <span key={tech} className="rounded bg-white/5 px-2 py-0.5 text-[9px] font-semibold text-[#8a8a8f]">
+                        <span key={tech} className="rounded bg-white/5 px-2 py-0.5 text-xs font-bold text-[#8a8a8f]">
                           {tech}
                         </span>
                       ))}
@@ -204,7 +205,7 @@ export const ProjectStack: React.FC = () => {
                           e.stopPropagation();
                           setActiveProject(project);
                         }}
-                        className="flex items-center gap-1 rounded bg-[#141416]/50 border border-white/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-widest text-[#f2f1ed] hover:border-[#ffb44f] transition-all glow-btn-secondary"
+                        className="flex items-center gap-1 rounded bg-[#141416]/50 border border-white/10 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-[#f2f1ed] hover:border-[#ffb44f] transition-all glow-btn-secondary"
                       >
                         <Info size={11} /> About
                       </button>
@@ -213,7 +214,7 @@ export const ProjectStack: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="flex items-center gap-1 rounded bg-[#141416]/50 border border-white/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-widest text-[#f2f1ed] hover:border-[#ffb44f] transition-all glow-btn-secondary"
+                        className="flex items-center gap-1 rounded bg-[#141416]/50 border border-white/10 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-[#f2f1ed] hover:border-[#ffb44f] transition-all glow-btn-secondary"
                       >
                         <Github size={11} /> Code
                       </a>
@@ -285,7 +286,7 @@ export const ProjectStack: React.FC = () => {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#ffb44f]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#ffb44f]">
                     {activeProject.category}
                   </span>
                   <h3 className="font-display text-2xl font-bold mt-2 text-[#f2f1ed]">
@@ -301,7 +302,7 @@ export const ProjectStack: React.FC = () => {
                 {/* Tech tags */}
                 <div className="flex flex-wrap gap-1 mb-4">
                   {activeProject.techStack.slice(0, 3).map((tech) => (
-                    <span key={tech} className="rounded bg-white/5 px-2 py-0.5 text-[9px] font-semibold text-[#8a8a8f]">
+                    <span key={tech} className="rounded bg-white/5 px-2 py-0.5 text-xs font-bold text-[#8a8a8f]">
                       {tech}
                     </span>
                   ))}
@@ -313,7 +314,7 @@ export const ProjectStack: React.FC = () => {
                       e.stopPropagation();
                       setActiveProject(activeProject);
                     }}
-                    className="flex-1 flex items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-[#141416]/50 py-2 text-[10px] font-black uppercase tracking-widest text-[#f2f1ed] hover:border-[#ffb44f] transition-all glow-btn-secondary"
+                    className="flex-1 flex items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-[#141416]/50 py-2 text-xs font-bold uppercase tracking-widest text-[#f2f1ed] hover:border-[#ffb44f] transition-all glow-btn-secondary"
                   >
                     <Info size={11} /> About
                   </button>
@@ -322,7 +323,7 @@ export const ProjectStack: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="flex-1 flex items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-[#141416]/50 py-2 text-[10px] font-black uppercase tracking-widest text-[#f2f1ed] hover:border-[#ffb44f] transition-all glow-btn-secondary"
+                    className="flex-1 flex items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-[#141416]/50 py-2 text-xs font-bold uppercase tracking-widest text-[#f2f1ed] hover:border-[#ffb44f] transition-all glow-btn-secondary"
                   >
                     <Github size={11} /> Code
                   </a>
@@ -357,9 +358,7 @@ export const ProjectStack: React.FC = () => {
             <span className="font-display text-xs font-black uppercase tracking-[0.2em] text-[#ffb44f]">
               03 / CREATIONS
             </span>
-            <h2 className="h-fluid-section text-[#f2f1ed] mt-4 font-black">
-              Solving complex data puzzles.
-            </h2>
+            <InteractiveHeading text="Solving complex data puzzles." />
             <p className="mt-6 max-w-md font-body text-sm leading-relaxed text-[#8a8a8f]">
               Click on the active card to launch its live deployment. Stretched layout provides tech badges, code repositories, and structural details easily.
             </p>
@@ -418,7 +417,7 @@ export const ProjectStack: React.FC = () => {
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffb44f] opacity-20"></span>
                           <div className="h-8 w-8 rounded-full border-2 border-white/5 border-t-[#ffb44f] animate-spin" />
                         </div>
-                        <span className="text-[9px] font-black uppercase tracking-widest text-[#ffb44f]">Launch Live App</span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-[#ffb44f]">Launch Live App</span>
                       </div>
                     </div>
 
@@ -426,11 +425,11 @@ export const ProjectStack: React.FC = () => {
                     <div className="md:col-span-7 flex flex-col justify-between">
                       <div>
                         <div className="flex items-center justify-between">
-                          <span className="text-[10px] font-black uppercase tracking-widest text-[#ffb44f]">
+                          <span className="text-xs font-bold uppercase tracking-widest text-[#ffb44f]">
                             {project.category}
                           </span>
                           {project.featured && (
-                            <span className="flex items-center gap-1 text-[10px] font-bold text-[#f2f1ed]/50">
+                            <span className="flex items-center gap-1 text-xs font-bold text-[#f2f1ed]/50">
                               <Award size={10} className="text-[#ffb44f]" /> Featured
                             </span>
                           )}
@@ -449,7 +448,7 @@ export const ProjectStack: React.FC = () => {
                           {project.techStack.slice(0, 3).map((tech) => (
                             <span
                               key={tech}
-                              className="rounded bg-white/5 px-2 py-0.5 text-[9px] font-semibold text-[#8a8a8f]"
+                              className="rounded bg-white/5 px-2 py-0.5 text-xs font-bold text-[#8a8a8f]"
                             >
                               {tech}
                             </span>
@@ -462,7 +461,7 @@ export const ProjectStack: React.FC = () => {
                               e.stopPropagation();
                               setActiveProject(project);
                             }}
-                            className="flex items-center gap-1 rounded bg-[#141416]/50 border border-white/10 px-3 py-1.5 text-[9px] font-black uppercase tracking-widest text-[#f2f1ed] hover:border-[#ffb44f] transition-all glow-btn-secondary"
+                            className="flex items-center gap-1 rounded bg-[#141416]/50 border border-white/10 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#f2f1ed] hover:border-[#ffb44f] transition-all glow-btn-secondary"
                           >
                             <Info size={11} /> About
                           </button>
@@ -471,7 +470,7 @@ export const ProjectStack: React.FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="flex items-center gap-1 rounded bg-[#141416]/50 border border-white/10 px-3 py-1.5 text-[9px] font-black uppercase tracking-widest text-[#f2f1ed] hover:border-[#ffb44f] transition-all glow-btn-secondary"
+                            className="flex items-center gap-1 rounded bg-[#141416]/50 border border-white/10 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#f2f1ed] hover:border-[#ffb44f] transition-all glow-btn-secondary"
                           >
                             <Github size={11} /> Code
                           </a>

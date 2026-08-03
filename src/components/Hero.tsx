@@ -59,12 +59,17 @@ export const Hero: React.FC = () => {
                 key={index}
                 initial={{ y: '100%', opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.2 + index * 0.03,
-                  ease: [0.16, 1, 0.3, 1],
+                whileHover={{
+                  scale: 1.18,
+                  color: '#ffb44f',
+                  y: -8,
                 }}
-                className="inline-block origin-bottom select-none"
+                transition={{
+                  type: 'spring',
+                  stiffness: 350,
+                  damping: 12,
+                }}
+                className="inline-block origin-center cursor-default select-none"
                 style={{ whiteSpace: char === ' ' ? 'pre' : 'normal' }}
               >
                 {char}
