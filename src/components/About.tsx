@@ -68,7 +68,7 @@ const InteractiveVectorCanvas: React.FC<{ isInView: boolean }> = ({ isInView }) 
     let width = (canvas.width = canvas.offsetWidth);
     let height = (canvas.height = canvas.offsetHeight);
 
-    // Grid coordinates
+    // Grid coordinates//
     const rows = 12;
     const cols = 12;
     const points: { x: number; y: number; ox: number; oy: number }[] = [];
