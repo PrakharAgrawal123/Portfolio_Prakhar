@@ -10,7 +10,7 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Background blur trigger
+      // Background blur trigger//
       setScrolled(window.scrollY > 50);
 
       // Scroll progress computation
