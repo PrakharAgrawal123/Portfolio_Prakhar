@@ -5,7 +5,7 @@ import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import * as THREE from 'three';
 import { usePortfolioStore } from '../store/usePortfolioStore';
 
-// Interactive core: pulls mesh rotation toward cursor position
+// Interactive core: pulls mesh rotation toward cursor position//
 const InteractiveSphere: React.FC = () => {
   const meshRef = useRef<THREE.Mesh>(null);
   const materialRef = useRef<any>(null);
