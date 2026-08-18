@@ -6,7 +6,7 @@ import { Linkedin, Github, Mail, ArrowUpRight, Check, Loader2 } from 'lucide-rea
 import confetti from 'canvas-confetti';
 
 // ==========================================
-// GOOGLE FORM INTEGRATION CONFIGURATION
+// GOOGLE FORM INTEGRATION CONFIGURATION//
 // ==========================================
 // Replace this URL with your actual Google Form Action URL.
 // To get this, open your Google Form in the browser, view the preview/live form,
