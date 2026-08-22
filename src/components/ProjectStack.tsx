@@ -7,7 +7,7 @@ import { usePortfolioStore } from '../store/usePortfolioStore';
 import { ArrowUpRight, Github } from 'lucide-react';
 import { InteractiveHeading } from './InteractiveHeading';
 
-// Register GSAP plugins
+/// Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
 export const ProjectStack: React.FC = () => {
