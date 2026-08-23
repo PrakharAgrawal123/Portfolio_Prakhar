@@ -13,8 +13,6 @@ import { CustomCursor } from './components/CustomCursor';
 import { CommandPalette } from './components/CommandPalette';
 import { ProjectDetail } from './components/ProjectDetail';
 
-
-
 // Content Sections
 import { Hero } from './components/Hero';
 import { MarqueeStripes } from './components/MarqueeStripes';
@@ -47,11 +45,14 @@ const App: React.FC = () => {
 
   // 2. Initialize Lenis Inertial Smooth Scrolling & sync with GSAP
   useEffect(() => {
+    // Only initialize smooth wheel on desktop to ensure pristine native touch momentum on mobile
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.0,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       gestureOrientation: 'vertical',
-      smoothWheel: true,
+      smoothWheel: !isTouchDevice,
     });
 
     let rafId: number;
@@ -94,7 +95,7 @@ const App: React.FC = () => {
           }
         },
         {
-          rootMargin: '-30% 0px -30% 0px', // Trigger when section occupies core viewport
+          rootMargin: '-20% 0px -20% 0px',
           threshold: 0.1,
         }
       );
@@ -110,7 +111,7 @@ const App: React.FC = () => {
     };
   }, []);
 
-  // 4. Easter Egg Devtools ascii greeting
+  // 4. Console greeting
   useEffect(() => {
     console.log(
       `%c
@@ -121,7 +122,7 @@ const App: React.FC = () => {
 | |   | | | (_| | |_| | | | (_| | |   
 |_|   |_|  \\__,_|\\__|_| |_|\\__,_|_|   
                                       
-Recruiter Terminal. Hello there! 🚀
+Portfolio Loaded Successfully! 🚀
 Email: agrawalprakhar931@gmail.com
 Phone: +91 6390142114
       `,
@@ -131,7 +132,7 @@ Phone: +91 6390142114
 
   return (
     <>
-      {/* Dynamic Cursor */}
+      {/* Dynamic Cursor (Desktop only) */}
       <CustomCursor />
 
       {/* Command Palette Menu overlay */}
@@ -140,32 +141,11 @@ Phone: +91 6390142114
       {/* Initial load curtain preloader */}
       <Preloader />
 
-      {/* Manual Global Grain/Noise Overlay Filter */}
-      <div className="pointer-events-none fixed inset-0 z-[9999] h-full w-full overflow-hidden">
-        <svg className="h-full w-full opacity-[0.05] mix-blend-overlay">
-          <filter id="noise">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.8"
-              numOctaves="3"
-              stitchTiles="stitch"
-            />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0"
-            />
-          </filter>
-          <rect width="100%" height="100%" filter="url(#noise)" />
-        </svg>
-      </div>
-
       {/* Navigation Headers */}
       <Navbar />
 
-
-
       {/* Document page nodes */}
-      <div className="relative z-10 w-full overflow-hidden">
+      <main className="relative z-10 w-full overflow-hidden bg-[#0b0b0d]">
         <Hero />
         <MarqueeStripes />
         <About />
@@ -177,7 +157,7 @@ Phone: +91 6390142114
         <Testimonials />
         <Contact />
         <Footer />
-      </div>
+      </main>
 
       {/* Project Case Study Details Dialog Panel */}
       <AnimatePresence>

@@ -86,82 +86,82 @@ export const portfolioData = {
     }
   },
   about: {
-    bio: "I'm Prakhar Agrawal, a BCA student passionate about Data Science, Machine Learning, Artificial Intelligence, and Analytics. I enjoy solving real-world problems using data, building ML-powered applications, and continuously learning modern AI technologies. Along with Data Science, I have experience developing full-stack web applications and deploying production-ready projects.",
+    bio: "I’m Prakhar Agrawal, a BCA student focused on Data Analytics, Data Science, Machine Learning, and Artificial Intelligence. I enjoy working with data to uncover insights, identify patterns, and solve real-world problems through data-driven decision-making. Alongside analytics and machine learning, I have experience building full-stack applications and ML-powered solutions.",
     currentFocus: "Data Science, Machine Learning, SQL, Power BI and Deep Learning",
     stats: [
-      { label: "Major Projects", value: 10 },
-      { label: "Hackathons", value: 5 },
-      { label: "Certifications", value: 10 },
-      { label: "Technologies", value: 20 }
+      { label: "Major Projects", value: 5  },
+      { label: "Hackathons", value: 3 },
+      { label: "Certifications", value: 8 },
+      { label: "Technologies", value: 15 }
     ]
   },
   skills: {
-    languages: ["Python", "SQL", "Java", "JavaScript", "C"],
+    languages: ["Python", "SQL", "Java", "JavaScript"],
     dataScience: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-Learn", "Machine Learning", "Statistics"],
     visualization: ["Power BI", "Excel"],
     database: ["MySQL", "MongoDB"],
     web: ["HTML", "CSS", "React", "Node.js", "Express", "Flask"],
-    tools: ["Git", "GitHub", "VS Code", "Jupyter Notebook", "Google Colab", "Firebase", "Vercel"],
-    currentlyLearning: ["Deep Learning", "LangChain", "Generative AI", "Apache Spark"]
+    tools: ["Git", "GitHub", "VS Code", "Jupyter Notebook", "Google Colab", "Firebase", "Vercel","Render"],
+    currentlyLearning: ["Deep Learning", "LangChain", "Generative AI"]
   },
   projects: [
     {
       id: 1,
-      title: "LegalLingo",
-      category: "AI / NLP",
+      title: "Customer Segmentation & Sales Analysis",
+      category: "Data Science & Analytics",
       featured: true,
-      description: "An AI-powered legal document simplification platform that transforms complex legal language into easy-to-understand explanations, extracts key clauses, and provides translation.",
-      longDescription: "LegalLingo helps users understand contracts, agreements, and legal documents without requiring legal expertise. It combines OCR, Natural Language Processing, and Generative AI to analyze uploaded documents, identify important sections, explain legal jargon, and generate simplified summaries.",
-      techStack: ["React", "Flask", "Python", "Gemini API", "OCR", "NLP", "Tailwind CSS"],
+      description: "An end-to-end data analytics and customer segmentation platform utilizing RFM (Recency, Frequency, Monetary) modeling and K-Means clustering to uncover customer behavioral patterns and optimize retail sales strategies.",
+      longDescription: "End-to-end exploratory data analysis and customer segmentation platform built with Python, Pandas, and Scikit-Learn. Analyzes transactional sales datasets, segments customers based on Recency, Frequency, and Monetary (RFM) metrics via K-Means clustering, and provides visual business intelligence insights.",
+      techStack: ["Python", "Pandas", "Scikit-Learn", "K-Means", "Seaborn", "Matplotlib", "Power BI"],
       features: [
-        "Legal jargon simplification",
-        "AI-generated summaries",
-        "Multilingual translation",
-        "Clause explanation",
-        "Document upload",
-        "PDF support",
-        "Dark & Light mode"
+        "RFM segmentation modeling",
+        "K-Means clustering & elbow method",
+        "Exploratory sales data analysis",
+        "Customer lifetime value metrics",
+        "Sales trend visualization",
+        "Interactive cohort heatmaps"
       ],
       github: "https://github.com/PrakharAgrawal123",
-      live: "https://github.com/PrakharAgrawal123/LegalLingo",
-      image: "/projects/legallingo.png",
+      live: "https://github.com/PrakharAgrawal123",
+      image: "/projects/customer-segmentation.png",
       stats: [
-        { value: "95%+", label: "OCR Accuracy" },
-        { value: "< 5s", label: "Simplification" },
-        { value: "Gemini", label: "LLM Pipeline" }
+        { value: "4 Cohorts", label: "Customer Personas" },
+        { value: "98%+", label: "Data Quality" },
+        { value: "K-Means", label: "Clustering Model" }
       ],
-      problem: "Legal contracts are intentionally dense and full of archaic terminology, making them inaccessible to average citizens and small business owners who cannot afford expensive hourly legal consultations.",
-      role: "Lead AI Developer, designing both the document ingestion pipeline (OCR) and the prompting strategy for the LLM translation layers.",
-      process: "Built a Python-Flask backend that extracts text from PDFs via OCR. Passed structured chunks to Google's Gemini Pro API using carefully crafted system instructions. Implemented a responsive React client featuring side-by-side translation panels and interactive legal clause highlight cards.",
-      outcomes: "Simplified dense, multi-page agreements into 5 bullet-point summaries and categorized clauses by risk level, reducing document reading and comprehension time by over 70%."
+      problem: "Retailers and e-commerce platforms struggle to identify high-value customer cohorts and retain churning segments due to unorganized transactional data.",
+      role: "Data Analyst & ML Specialist, responsible for data cleaning, feature engineering, clustering algorithms, and business dashboard creation.",
+      process: "Preprocessed transactional records, calculated RFM metrics, determined optimal cluster count via Elbow Method & Silhouette Scores, and visualized customer distribution cohorts.",
+      outcomes: "Identified core high-value buyer groups and at-risk cohorts, enabling targeted marketing campaigns and improving potential retention strategies."
     },
     {
       id: 2,
-      title: "ViralScore",
-      category: "Machine Learning",
+      title: "Banking Customer Analysis",
+      category: "Fintech Analytics",
       featured: true,
-      description: "A machine learning application that predicts the potential virality of LinkedIn posts before publishing by analyzing writing style, readability, engagement signals, and content quality.",
-      longDescription: "ViralScore leverages Natural Language Processing and Machine Learning to evaluate LinkedIn content and estimate its engagement potential. Users receive an overall virality score along with personalized suggestions to improve reach and audience engagement.",
-      techStack: ["Python", "Flask", "React", "Scikit-Learn", "Pandas", "Tailwind CSS"],
+      description: "A comprehensive banking analytics system examining customer demographics, credit scores, account balances, and behavioral patterns to predict customer churn and financial risk.",
+      longDescription: "Comprehensive data science pipeline for financial institutions analyzing customer account metrics, transaction frequencies, credit evaluations, and attrition factors to drive data-informed risk management and personalized banking offerings.",
+      techStack: ["Python", "Pandas", "NumPy", "Scikit-Learn", "Matplotlib", "Seaborn", "XGBoost"],
       features: [
-        "Virality prediction",
-        "Content quality analysis",
-        "Readability score",
-        "AI writing suggestions",
-        "Interactive dashboard"
+        "Demographic churn profiling",
+        "Credit score distribution analysis",
+        "Balance & product correlation",
+        "Risk factor identification",
+        "Statistical hypothesis testing",
+        "Feature importance visualization"
       ],
-      github: "https://github.com/PrakharAgrawal123",
-      live: "https://github.com/PrakharAgrawal123/ViralScore",
-      image: "/projects/viralscore.png",
+      github: "https://github.com/PrakharAgrawal123/Banking-Customer-Analysis",
+      live: "https://github.com/PrakharAgrawal123/Banking-Customer-Analysis",
+      image: "/projects/churn-prediction.png",
       stats: [
-        { value: "88%", label: "Post Accuracy" },
-        { value: "10k+", label: "Dataset Posts" },
-        { value: "Forest", label: "ML Regressor" }
+        { value: "10,000+", label: "Customer Records" },
+        { value: "86%", label: "Churn Predictability" },
+        { value: "XGBoost", label: "Classification" }
       ],
-      problem: "Professionals and creators post content on LinkedIn without any objective feedback loop, resulting in low initial traction due to poor formatting, low readability, or suboptimal hook sentences.",
-      role: "Data Scientist & ML Engineer, responsible for scraping, feature engineering, training the prediction model, and implementing the text analysis scoring metrics.",
-      process: "Engineered features from text inputs including sentence lengths, readability indices (Flesch-Kincaid), emoji densities, and positive/negative sentiment scores. Trained a Random Forest Regressor on simulated post engagement data. Designed a Flask API to serve predictions dynamically.",
-      outcomes: "Delivered virality prediction scores with 88% model validation accuracy, coupled with actionable text revisions that improved simulated click-through estimations."
+      problem: "Commercial banks suffer high customer attrition rates without clear visibility into which financial parameters correlate with customer departures.",
+      role: "Financial Data Analyst, performing data wrangling, correlation analysis, predictive modeling, and churn driver synthesis.",
+      process: "Conducted statistical exploratory data analysis, handled class imbalance, built predictive classification trees, and developed feature importance matrices for key churn indicators.",
+      outcomes: "Surfaced key attrition drivers (e.g., active membership and account balance tiers), delivering actionable intelligence for proactive customer retention."
     },
     {
       id: 3,
@@ -179,8 +179,8 @@ export const portfolioData = {
         "Data visualization",
         "Responsive interface"
       ],
-      github: "https://github.com/PrakharAgrawal123",
-      live: "https://github.com/PrakharAgrawal123/AI-Multi-Disease-Prediction",
+      github: "https://github.com/PrakharAgrawal123/AI-Health-Prediction",
+      live: "https://ai-health-predictor.streamlit.app",
       image: "/projects/healthcare-ai.png",
       stats: [
         { value: "94%+", label: "SVC Accuracy" },
@@ -194,59 +194,61 @@ export const portfolioData = {
     },
     {
       id: 4,
-      title: "Smart Expense Tracker",
-      category: "Data Analytics",
-      featured: false,
-      description: "A personal finance management platform that helps users monitor expenses, analyze spending habits, and visualize financial insights using interactive dashboards.",
-      longDescription: "The application enables users to categorize transactions, set monthly budgets, track savings, and generate insightful visual reports. AI-based spending analysis provides recommendations to improve financial planning.",
-      techStack: ["React", "Firebase", "Chart.js", "Node.js", "Tailwind CSS"],
+      title: "LegalLingo",
+      category: "AI / NLP",
+      featured: true,
+      description: "An AI-powered legal document simplification platform that transforms complex legal language into easy-to-understand explanations, extracts key clauses, and provides translation.",
+      longDescription: "LegalLingo helps users understand contracts, agreements, and legal documents without requiring legal expertise. It combines OCR, Natural Language Processing, and Generative AI to analyze uploaded documents, identify important sections, explain legal jargon, and generate simplified summaries.",
+      techStack: ["React", "Flask", "Python", "Gemini API", "OCR", "NLP", "Tailwind CSS"],
       features: [
-        "Expense tracking",
-        "Budget planning",
-        "Interactive charts",
-        "Monthly reports",
-        "AI spending insights"
+        "Legal jargon simplification",
+        "AI-generated summaries",
+        "Multilingual translation",
+        "Clause explanation",
+        "Document upload",
+        "PDF support",
+        "Dark & Light mode"
       ],
-      github: "https://github.com/PrakharAgrawal123",
-      live: "https://github.com/PrakharAgrawal123/Smart-Expense-Tracker",
-      image: "/projects/expense-tracker.png",
+      github: "https://github.com/PrakharAgrawal123/LegalLingo",
+      live: "https://legal-lingo-eight.vercel.app",
+      image: "/projects/legallingo.png",
       stats: [
-        { value: "Chart.js", label: "Data Graphics" },
-        { value: "Firestore", label: "Realtime Sync" },
-        { value: "Firebase", label: "Authentication" }
+        { value: "95%+", label: "OCR Accuracy" },
+        { value: "< 5s", label: "Simplification" },
+        { value: "Gemini", label: "LLM Pipeline" }
       ],
-      problem: "People struggle to stick to financial budgets because of manual record keeping, lack of visualization on spending distributions, and lack of warnings when category budgets are breached.",
-      role: "Frontend & Integration Developer, implementing database state tracking, user authentication, and data visualizations.",
-      process: "Integrated Firebase Firestore for dynamic real-time expense synchronization. Configured Chart.js datasets to compute and render breakdown graphs of expenditures by category. Developed responsive modals for transactional logging.",
-      outcomes: "Created a personal dashboard that processes monthly budget compliance, reducing user overspending reports by visual categorization."
+      problem: "Legal contracts are intentionally dense and full of archaic terminology, making them inaccessible to average citizens and small business owners who cannot afford expensive hourly legal consultations.",
+      role: "Lead AI Developer, designing both the document ingestion pipeline (OCR) and the prompting strategy for the LLM translation layers.",
+      process: "Built a Python-Flask backend that extracts text from PDFs via OCR. Passed structured chunks to Google's Gemini Pro API using carefully crafted system instructions. Implemented a responsive React client featuring side-by-side translation panels and interactive legal clause highlight cards.",
+      outcomes: "Simplified dense, multi-page agreements into 5 bullet-point summaries and categorized clauses by risk level, reducing document reading and comprehension time by over 70%."
     },
     {
       id: 5,
-      title: "Customer Churn Prediction",
+      title: "ViralScore",
       category: "Machine Learning",
-      featured: false,
-      description: "A predictive analytics system that identifies customers likely to discontinue a service, enabling businesses to improve retention through data-driven decisions.",
-      longDescription: "Built using classification algorithms and exploratory data analysis, this project processes customer demographic and behavioral data to estimate churn probability. Interactive visualizations help understand feature importance and business impact.",
-      techStack: ["Python", "Scikit-Learn", "Pandas", "Matplotlib", "Seaborn", "Streamlit"],
+      featured: true,
+      description: "A machine learning application that predicts the potential virality of LinkedIn posts before publishing by analyzing writing style, readability, engagement signals, and content quality.",
+      longDescription: "ViralScore leverages Natural Language Processing and Machine Learning to evaluate LinkedIn content and estimate its engagement potential. Users receive an overall virality score along with personalized suggestions to improve reach and audience engagement.",
+      techStack: ["Python", "Flask", "React", "Scikit-Learn", "Pandas", "Tailwind CSS"],
       features: [
-        "Customer churn prediction",
-        "Exploratory data analysis",
-        "Feature importance",
-        "Probability scoring",
+        "Virality prediction",
+        "Content quality analysis",
+        "Readability score",
+        "AI writing suggestions",
         "Interactive dashboard"
       ],
-      github: "https://github.com/PrakharAgrawal123",
-      live: "https://github.com/PrakharAgrawal123/Customer-Churn-Prediction",
-      image: "/projects/churn-prediction.png",
+      github: "https://github.com/PrakharAgrawal123/ViralScore-",
+      live: "https://viral-score-eight.vercel.app",
+      image: "/projects/viralscore.png",
       stats: [
-        { value: "0.86", label: "AUC-ROC Score" },
-        { value: "SMOTE", label: "Data Balance" },
-        { value: "15%", label: "Churn Drop" }
+        { value: "88%", label: "Post Accuracy" },
+        { value: "10k+", label: "Dataset Posts" },
+        { value: "Forest", label: "ML Regressor" }
       ],
-      problem: "Telecom and SaaS firms lose a high percentage of revenues to annual customer attrition, yet retention teams fail to intervene early due to a lack of individual customer churn risk indicators.",
-      role: "Data Analyst, executing detailed statistical analysis, feature importance mapping, and predictive classification model tuning.",
-      process: "Cleaned and prepared customer churn datasets, addressing imbalance using SMOTE. Evaluated random forest and gradient boosting models using AUC-ROC metrics. Designed feature importance charts to highlight major attrition factors.",
-      outcomes: "Engineered a predictive churn model with an AUC of 0.86, enabling retention teams to focus efforts on high-probability attrition segments."
+      problem: "Professionals and creators post content on LinkedIn without any objective feedback loop, resulting in low initial traction due to poor formatting, low readability, or suboptimal hook sentences.",
+      role: "Data Scientist & ML Engineer, responsible for scraping, feature engineering, training the prediction model, and implementing the text analysis scoring metrics.",
+      process: "Engineered features from text inputs including sentence lengths, readability indices (Flesch-Kincaid), emoji densities, and positive/negative sentiment scores. Trained a Random Forest Regressor on simulated post engagement data. Designed a Flask API to serve predictions dynamically.",
+      outcomes: "Delivered virality prediction scores with 88% model validation accuracy, coupled with actionable text revisions that improved simulated click-through estimations."
     }
   ],
   experience: [
@@ -269,8 +271,8 @@ export const portfolioData = {
     {
       id: 2,
       role: "Web Development Intern",
-      company: "CodeCite",
-      duration: "Jan 2026 – Apr 2026",
+      company: "Coderesite",
+      duration: "Jun 2025 – Apr 2025",
       employmentType: "Internship",
       description: "Worked as a Web Development Intern, contributing to responsive and user-friendly web applications. Collaborated on frontend development, backend integration, API consumption, and deployment while following modern development practices and clean coding standards.",
       technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express.js", "MongoDB", "Git", "GitHub"],
@@ -305,25 +307,25 @@ export const portfolioData = {
     {
       id: 2,
       degree: "Intermediate (Class XII)",
-      institution: "ABC Inter College",
+      institution: "Gyan Bharti Inter College",
       board: "Uttar Pradesh Board",
-      location: "Prayagraj, Uttar Pradesh",
-      duration: "2022 – 2024",
+      location: "Karwi Chitrakoot",
+      duration: "2023 – 2024",
       status: "Completed",
-      grade: "88%",
+      grade: "92%",
       stream: "Science (PCM)",
-      description: "Studied Physics, Chemistry, Mathematics, and Computer Science while developing a strong analytical and logical problem-solving foundation."
+      description: "Studied Physics, Chemistry, Mathematics"
     },
     {
       id: 3,
       degree: "High School (Class X)",
-      institution: "XYZ Public School",
-      board: "CBSE",
-      location: "Prayagraj, Uttar Pradesh",
-      duration: "2021 – 2022",
+      institution: "B.B.S.V.M Inter College",
+      board: "Uttar Pradesh Board",
+      location: "Karwi Chitrakoot",
+      duration: "2022 – 2023",
       status: "Completed",
-      grade: "91%",
-      description: "Built a strong academic foundation in Mathematics, Science, English, and Computer Applications while actively participating in technical and extracurricular activities."
+      grade: "90%",
+      description: "Built a strong academic foundation in Mathematics, Science, English"
     }
   ],
   achievements: [

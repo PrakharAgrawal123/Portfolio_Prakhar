@@ -5,21 +5,16 @@ import { usePortfolioStore } from '../store/usePortfolioStore';
 import { Linkedin, Github, Mail, ArrowUpRight, Check, Loader2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
-// ==========================================
-// GOOGLE FORM INTEGRATION CONFIGURATION//
-// ==========================================
-// Replace this URL with your actual Google Form Action URL.
-// To get this, open your Google Form in the browser, view the preview/live form,
-// inspect the HTML <form> element and copy the "action" attribute value.
-const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfD_K_your_form_id_here/formResponse";
+// GOOGLE FORM INTEGRATION CONFIGURATION
+const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf9nd_V0NGrg5J61iTXlh7q3xAbTyTwnwZ6FHHq7z2iVFQGTQ/formResponse";
 
 // Replace these entry IDs with the actual field entry names from your Google Form.
 // To find these, inspect the source code of the live Google Form input fields
 // and copy the "name" attribute values (typically look like "entry.123456789").
 const GOOGLE_FORM_ENTRY_IDS = {
-  name: "entry.123456789",    // Entry ID for Name input
-  email: "entry.987654321",   // Entry ID for Email input
-  message: "entry.111222333"  // Entry ID for Message textarea
+  name: "entry.1397439475",    // Entry ID for Name input
+  email: "entry.335348927",   // Entry ID for Email input
+  message: "entry.208742958"  // Entry ID for Message textarea
 };
 
 // Official WhatsApp SVG Icon Component
