@@ -8,6 +8,7 @@ import { InteractiveHeading } from './InteractiveHeading';
 export const Achievements: React.FC = () => {
   const { setCursor } = usePortfolioStore();
 
+  // 
   const getIcon = (type: string) => {
     switch (type) {
       case 'Hackathon':
