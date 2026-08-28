@@ -5,7 +5,7 @@ import { Clock, Code, ShieldCheck } from 'lucide-react';
 import { AureliaWatch } from './AureliaWatch';
 import { InteractiveHeading } from './InteractiveHeading';
 
-/// Count-up helper component for stats card// 
+// Count-up helper component for stats card// 
 const Counter: React.FC<{ value: number; label: string; suffix?: string }> = ({ value, label, suffix = '' }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
